@@ -1,31 +1,23 @@
 {
   "name": "hello-typescript",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
-  "main": "dist/server.js",
-  "devDependencies": {
-    "@types/express": "^4.16.1",
-    "@types/nunjucks": "^3.1.1",
-    "@types/webpack": "^4.4.26",
-    "html-webpack-plugin": "^4.0.0-beta.5",
-    "reload": "^2.4.0",
-    "ts-loader": "^5.3.3",
-    "typescript": "^3.3.4000",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-middleware": "^3.6.1",
-    "webpack-hot-middleware": "^2.24.3",
-    "webpack-node-externals": "^1.7.2"
-  },
-  "dependencies": {
-    "express": "^4.16.4",
-    "nunjucks": "^3.2.0"
-  },
+  "main": "dist/index",
+  "types": "dist/index",
   "scripts": {
-    "build:server": "rm -rf dist && webpack --config webpack.server.config.js",
-    "build:client": "webpack --config webpack.client.config.js",
-    "start:dev": "node dist/server.bundle",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf dist",
+    "build": "yarn run clean && tsc -p tsconfig.build.json",
+    "start": "node dist/index",
+    "dev": "jest --watch",
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.0",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.8.3"
   },
   "author": "Starck Lin <starck@beyond.com.tw> (http://beyond.tw)",
   "license": "MIT"
