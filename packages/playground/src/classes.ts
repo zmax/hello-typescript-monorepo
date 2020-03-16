@@ -1,4 +1,4 @@
-export default class Student {
+export default class Testing {
 
   public name: string = '';
   private _age: number = 0;

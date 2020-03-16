@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Usage: new <scope> <package-name>
+
+if [ ! -z $1 ]; then
+  if [ ! -z $2 ]; then
+
+    SOURCE_DIR="./.templates"
+    TARGET_DIR="./packages/$2"
+    FILES=("jest.config.js" "tsconfig.json" "tsconfig.build.json" "src/index.ts" "src/index.spec.ts")
+
+    mkdir -p "$TARGET_DIR/src"
+
+    # package.json
+    if [ ! -f "$TARGET_DIR/package.json" ]; then
+      sed -e "s/{{scope}}/$1/g;s/{{package-name}}/$2/g" ./.templates/package.json > "$TARGET_DIR/package.json"
+    fi
+
+    for i in "${FILES[@]}"
+    do
+      echo $i
+      if [ ! -f "$TARGET_DIR/$i" ]; then
+        cp "$SOURCE_DIR/$i" "$TARGET_DIR/$i"
+      fi
+    done
+
+  fi
+fi

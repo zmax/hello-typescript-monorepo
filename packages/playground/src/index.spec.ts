@@ -1,6 +1,4 @@
-import Student from './fixtures/classes';
-import DefaultTest, { Main, Test, Test as Test2 } from './fixtures/modules';
-import { sum } from './fixtures/functions';
+import Testing, { sum, Main, Test, Test as Test2, DefaultTest } from './index';
 
 describe('typescript base testing', () => {
   
@@ -48,13 +46,13 @@ describe('typescript base testing', () => {
 
   it('class constructor', () => {
     // constructor arg is string
-    let test = new Student('Hello');
+    let test = new Testing('Hello');
     expect(test.name).toBe('Hello');
     // constructor arg is number
-    let test2 = new Student(21);
+    let test2 = new Testing(21);
     expect(test2.age).toBe(21);
     // defalut properties checking
-    let test3 = new Student();
+    let test3 = new Testing();
     expect(test3.name).toBe('Default Name');
     expect(test3.age).toBe(18);
   });

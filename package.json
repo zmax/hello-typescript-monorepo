@@ -2,22 +2,30 @@
   "name": "hello-typescript",
   "version": "1.0.0",
   "description": "",
+  "private": true,
   "main": "dist/index",
   "types": "dist/index",
+  "workspaces": ["packages/*"],
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "yarn run clean && tsc -p tsconfig.build.json",
+    "bootstrap": "npx lerna bootstrap",
+    "clean": "rimraf dist && npx lerna run clean",
+    "build": "npm run build:packages && npm run build:main",
+    "build:main": "tsc -p tsconfig.build.json",
+    "build:packages": "npx lerna run build",
+    "dev": "concurrently --kill-others 'tsc -p tsconfig.build.json --watch' 'npx lerna run --parallel build -- --watch'",
     "start": "node dist/index",
-    "dev": "jest --watch",
-    "test": "jest"
+    "test": "jest",
+    "do": "npx lerna exec --"
   },
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "^25.1.4",
     "@types/node": "^13.9.0",
     "jest": "^25.1.0",
+    "lerna": "^3.20.2",
     "ts-jest": "^25.2.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "concurrently": "^5.1.0"
   },
   "author": "Starck Lin <starck@beyond.com.tw> (http://beyond.tw)",
   "license": "MIT"
