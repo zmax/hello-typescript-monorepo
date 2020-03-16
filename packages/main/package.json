@@ -1,0 +1,23 @@
+{
+  "name": "@beyond/main",
+  "version": "1.0.0",
+  "main": "dist/index",
+  "types": "dist/index",
+  "files": ["dist"],
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "jest",
+    "prepublishOnly": "yarn run build"
+  },
+  "dependencies": {
+    "@beyond/foo": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "typescript": "^3.8.3",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1"
+  }
+}

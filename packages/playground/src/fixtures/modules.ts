@@ -3,7 +3,7 @@ export default class DefaultTest {}
 export class Test {}
 
 export class Main {
-  sayHello(): void {
+  sayHello(...args: any[]): void {
     console.log('Hello World! ');
   }
   say(msg: string): void {

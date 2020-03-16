@@ -9,11 +9,9 @@
   "scripts": {
     "bootstrap": "npx lerna bootstrap",
     "clean": "rimraf dist && npx lerna run clean",
-    "build": "yarn run build:packages && yarn run build:main",
-    "build:main": "tsc -p tsconfig.build.json",
-    "build:packages": "npx lerna run build",
-    "dev": "concurrently --kill-others 'tsc -p tsconfig.build.json --watch' 'npx lerna run --parallel build -- --watch'",
-    "start": "node dist/index",
+    "build": "npx lerna run build",
+    "dev": "npx lerna run --parallel build -- --watch",
+    "start": "node packages/main/dist/index",
     "test": "jest",
     "do": "npx lerna exec --"
   },
