@@ -1,8 +1,8 @@
-import Testing from "./classes";
-import DefaultTest from './modules';
+import Testing from "./fixtures/classes";
+import DefaultTest from './fixtures/modules';
 
-export { Main, Test } from './modules';
-export { sum } from './functions';
+export { Main, Test } from './fixtures/modules';
+export { sum } from './fixtures/functions';
 
 export default Testing;
 export { DefaultTest };
