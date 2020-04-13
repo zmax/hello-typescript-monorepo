@@ -3,7 +3,7 @@
 This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
 
 ```bash
-npx lerna bootstrap
+yarn bootstrap
 yarn build
 ```
 
