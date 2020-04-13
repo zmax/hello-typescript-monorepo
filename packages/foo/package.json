@@ -1,6 +1,8 @@
 {
   "name": "@beyond/foo",
   "version": "0.1.0",
+  "author": "Starck Lin",
+  "module": "dist/foo.esm.js",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -18,7 +20,9 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "@beyond/playground": "^0.1.0"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -30,12 +34,9 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "author": "Starck Lin",
-  "module": "dist/packagesfoo.esm.js",
   "devDependencies": {
-    "@types/jest": "^25.2.1",
-    "husky": "^4.2.3",
-    "tsdx": "^0.13.1",
+    "husky": "^4.2.5",
+    "tsdx": "^0.13.2",
     "tslib": "^1.11.1",
     "typescript": "^3.8.3"
   }

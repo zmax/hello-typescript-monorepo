@@ -2,11 +2,6 @@
 
 This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
 
-```bash
-npx lerna bootstrap
-yarn build
-```
-
 ## Local Development
 
 Below is a list of commands you will probably find useful.

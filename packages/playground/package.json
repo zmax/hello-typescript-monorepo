@@ -3,7 +3,6 @@
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "private": true,
   "files": [
     "dist",
     "src"
@@ -11,19 +10,14 @@
   "engines": {
     "node": ">=10"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "bootstrap": "lerna bootstrap",
     "start": "tsdx watch",
-    "build": "lerna run build && tsdx build",
+    "build": "tsdx build",
     "test": "tsdx test",
     "lint": "tsdx lint",
-    "prepare": "yarn run build"
+    "prepare": "tsdx build"
   },
-  "peerDependencies": {
-  },
+  "peerDependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -35,18 +29,13 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "hello-tsdx",
+  "name": "@beyond/playground",
   "author": "Starck Lin",
-  "module": "dist/hello-tsdx.esm.js",
+  "module": "dist/playground.esm.js",
   "devDependencies": {
-    "@types/jest": "^25.2.1",
     "husky": "^4.2.5",
-    "lerna": "^3.20.2",
     "tsdx": "^0.13.2",
     "tslib": "^1.11.1",
-    "typescript": "^3.8.3",
-    "concurrently": "^5.1.0",
-    "rimraf": "^3.0.2",
-    "mkdirp": "1.0.4"
+    "typescript": "^3.8.3"
   }
 }

@@ -1,10 +1,6 @@
-export const sum = (a: number, b: number) => {
-  if ('development' === process.env.NODE_ENV) {
-    console.log('boop');
-  }
-  return a + b;
-};
+import { Main } from '@beyond/playground';
+export { sum } from '@beyond/playground';
 
-export function helloWorld(): void {
-  console.log('Hello World!');
+export function helloWorld() {
+  console.log((new Main()).hello());
 }
